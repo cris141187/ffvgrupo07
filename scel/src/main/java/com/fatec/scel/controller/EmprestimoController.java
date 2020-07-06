@@ -24,7 +24,14 @@ public class EmprestimoController {
 
 	@GetMapping("/cadastrar")
 	public ModelAndView registrarEmprestimo(Emprestimo emprestimo) {
-		ModelAndView mv = new ModelAndView("registrarEmprestimo");
+		ModelAndView mv = new ModelAndView("registraEmprestimo");
+		mv.addObject("emprestimo", emprestimo);
+		return mv;
+	}
+
+	@GetMapping("/consultar")
+	public ModelAndView consultarEmprestimo(Emprestimo emprestimo) {
+		ModelAndView mv = new ModelAndView("consultarEmprestimo");
 		mv.addObject("emprestimo", emprestimo);
 		return mv;
 	}

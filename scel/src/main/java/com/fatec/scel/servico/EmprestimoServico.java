@@ -10,4 +10,5 @@ public interface EmprestimoServico {
 	public String registraDevolucao(String isbn); // supoe que isbn refere-se ao tombo
 
 	public void deleteById(Long id);
+
 }

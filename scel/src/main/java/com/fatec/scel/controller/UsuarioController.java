@@ -24,7 +24,7 @@ public class UsuarioController {
 	@Autowired
 	UsuarioServico servico;
 
-	@GetMapping("/consulta")
+	@GetMapping("/consultar")
 	public ModelAndView retornaFormDeConsultaTodosUsuarios() {
 		ModelAndView modelAndView = new ModelAndView("consultarUsuario");
 		modelAndView.addObject("usuarios", servico.findAll());
@@ -40,7 +40,7 @@ public class UsuarioController {
 
 	@GetMapping("/edit/{ra}") // diz ao metodo que ira responder a uma requisicao do tipo get
 	public ModelAndView retornaFormParaEditarUsuario(@PathVariable("ra") String ra) {
-		ModelAndView modelAndView = new ModelAndView("atualizaUsuario");
+		ModelAndView modelAndView = new ModelAndView("atualizarUsuario");
 		modelAndView.addObject("usuario", servico.findByRa(ra)); // o repositorio e injetado no controller
 		return modelAndView; // addObject adiciona objetos para view
 	}
