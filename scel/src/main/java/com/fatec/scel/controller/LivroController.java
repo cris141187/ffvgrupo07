@@ -35,6 +35,13 @@ public class LivroController {
 		return mv;
 	}
 
+	@GetMapping("/alterar")
+	public ModelAndView retornaFormDeAlterarLivro(Livro livro) {
+		ModelAndView mv = new ModelAndView("atualizarLivro");
+		mv.addObject("livro", livro);
+		return mv;
+	}
+
 	@GetMapping("/edit/{isbn}") // diz ao metodo que ira responder a uma requisicao do tipo get
 	public ModelAndView retornaFormParaEditarLivro(@PathVariable("isbn") String isbn) {
 		ModelAndView modelAndView = new ModelAndView("atualizarLivro");
